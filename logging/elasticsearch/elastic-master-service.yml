@@ -1,0 +1,16 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: elasticsearch-master
+  namespace: logging
+  labels:
+    app: elasticsearch
+    role: master
+spec:
+  selector:
+    app: elasticsearch
+    role: master
+  ports:
+    - port: 9300
+      name: transport
+
